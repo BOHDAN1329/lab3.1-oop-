@@ -1,0 +1,24 @@
+#pragma once
+#include <iostream>
+#include <string>
+using namespace std;
+class Pair
+{
+	int a, b;
+public:
+	Pair();
+	Pair(int x, int y);
+	Pair(const Pair& r);
+	~Pair(void);
+	int getA() const { return a; }
+	int getB() const { return b; }
+	void setA(const int value) { a = value; }
+	void setB(const int value) { b = value; }
+	friend Pair operator + (const Pair& l, const Pair& r);
+	friend Pair operator * (const Pair& l, const int k);
+	friend Pair operator * (const int k, const Pair& r);
+	operator string() const;
+	friend ostream& operator << (ostream& out, const Pair& r);
+	friend istream& operator >> (istream& in, Pair& r);
+};
+
